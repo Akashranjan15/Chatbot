@@ -3,7 +3,7 @@ from groq import Groq  # Assuming you have a Groq Python client library
 from textblob import TextBlob
 
 # Replace this with your Groq API key
-groq_api_key = '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'
+groq_api_key = 'api key'
 
 # Initialize Groq client
 client = Groq(api_key=groq_api_key)
