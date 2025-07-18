@@ -1,5 +1,5 @@
 gradio==4.28.3
-groq==0.3.2
+groq
 textblob==0.17.1
 nltk==3.8.1
 audioop-lts
