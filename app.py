@@ -109,7 +109,6 @@ with gr.Blocks(theme="Respair/Shiki@1.2.1") as demo:
         value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
         label="Calming Background Music",
         autoplay=False,
-        loop=True
     )
 
     chat_history = gr.State([])
