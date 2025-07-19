@@ -2,13 +2,8 @@ import gradio as gr
 from groq import Groq
 from textblob import TextBlob
 import os
-import nltk
 import time
 from datetime import datetime
-
-# 📦 Download required NLTK models
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
 
 # 🔐 Load Groq API key from environment
 groq_api_key = os.environ.get("groq_api_key")
@@ -89,7 +84,7 @@ def chatbot(user_message, history=None):
         bot_reply = ""
         for chunk in generate_response_stream(user_message):
             bot_reply += chunk
-            time.sleep(0.05)  # Simulate natural typing
+            time.sleep(0.05)
             yield history + [{"role": "assistant", "content": bot_reply}], (
                 f"**Sentiment**: {sentiment} (Polarity: {polarity:.2f})\n"
                 f"**Coping Tip**: {coping_strategy}"
