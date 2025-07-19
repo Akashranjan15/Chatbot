@@ -13,7 +13,7 @@ nltk.download('averaged_perceptron_tagger')
 # 🔐 Load Groq API key from environment
 groq_api_key = os.environ.get("groq_api_key")
 if not groq_api_key:
-    raise ValueError("❌ Groq API key not found in environment variables.")
+    raise ValueError("Groq API key not found in environment variables.")
 client = Groq(api_key=groq_api_key)
 
 # 🔁 Stream line-by-line response
@@ -132,9 +132,7 @@ with gr.Blocks(theme="Respair/Shiki@1.2.1") as demo:
     submit_button.click(
         fn=chatbot,
         inputs=[user_input, chat_history],
-        outputs=[chat_display, output_text, user_input],
-        api_name="chatbot",
-        stream=True
+        outputs=[chat_display, output_text, user_input]
     )
     user_input.submit(
         fn=chatbot,
